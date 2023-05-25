@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('futboleros', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('ap_materno');
+            $table->string('ap_paterno');
+            $table->integer('celular');
+            $table->date('Fnacimiento');
         });
     }
 
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('futboleros');
+        //
     }
 };
